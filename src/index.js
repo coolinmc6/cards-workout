@@ -2,11 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import './css/styles.scss';
 
+import Home from './container/Home';
+
 const App = () => {
   return (
-    <main>
-      <h1>Main App</h1>
-    </main>
+    <>
+      <Home />
+    </>
   )
 }
 
