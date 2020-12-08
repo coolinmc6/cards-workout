@@ -8,8 +8,10 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateColumns: '5fr 5fr',
   },
   card: {
-    fontSize: 100,
+    fontSize: 20,
     textAlign: 'center',
+    position: 'relative',
+    boxShadow: '0px 0px 15px #ccc',
   },
   workoutParent: {
     fontSize: 24,
@@ -18,6 +20,23 @@ const useStyles = makeStyles((theme) => ({
   },
   reps: {
     // fontSize: 18,
+  },
+  littleSuit: {
+    position: 'absolute',
+    right: '10%',
+    top: '5%'
+  },
+  bigSuit: {
+    position: 'absolute',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    bottom: '25%',
+    fontSize: 80,
+  },
+  value: {
+    position: 'absolute',
+    left: '10%',
+    top: '5%'
   }
 }))
 
@@ -34,9 +53,10 @@ const ActiveCard = ({ activeCard, legend }) => {
   return (
     <div className={classes.root}>
       <div className={classes.card}>{activeCard && (
-        <>
-          {activeCard[0]}
-          {createSuit(activeCard[1])}
+        <> 
+          <div className={classes.littleSuit}>{createSuit(activeCard[1])}</div>
+          <div className={classes.value}>{activeCard[0]}</div>
+          <div className={classes.bigSuit}>{createSuit(activeCard[1])}</div>
         </>
       )}</div>
       <div className={classes.workoutParent}>

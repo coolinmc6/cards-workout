@@ -95,7 +95,7 @@ const Home = () => {
   }
 
   const shuffle = () => {
-    const newDeck = _.shuffle(buildDeck());
+    const newDeck = buildDeck();
     const newActiveCard = newDeck[0];
     resetAll();
     setDeck(newDeck);

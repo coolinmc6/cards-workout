@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash'
 // Build Deck
 const buildDeck = () => {
 	const suits = ['C', 'D', 'H', 'S']
@@ -10,7 +11,7 @@ const buildDeck = () => {
 			cards.push(card);
 		}
 	}
-	return cards;
+	return _.shuffle(cards);
 }
 
 // Value of Card
